@@ -1,3 +1,7 @@
+// Solution
+// First find the left max and right max height for each element
+// Then take element and subtract it's height from the min of left max and right max of that element 
+// If it's greater than 0 add it in the total
 # include <iostream>
 using namespace std;
 int main()
