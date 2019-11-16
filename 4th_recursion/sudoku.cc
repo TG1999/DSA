@@ -4,16 +4,15 @@ using namespace std;
 const int DIM = 9;
 
 bool canPlace(int num, int board[][DIM], int x, int y){
-    for(int i = 0; i < DIM; ++i){
+    for(int i = 0; i < 9; ++i){
         if (board[i][y] == num) return false;
         if (board[x][i] == num) return false; 
     }
 
-    int rootDim = sqrt(DIM);
     int subBoxRow = (x/3)*3; 
     int subBoxCol = (y/3)*3; 
-    for(int i = subBoxRow; i < subBoxRow + rootDim; ++i){
-        for(int j = subBoxCol; j < subBoxCol + rootDim; ++j){
+    for(int i = subBoxRow; i < subBoxRow + 3; ++i){
+        for(int j = subBoxCol; j < subBoxCol + 3; ++j){
             if (board[i][j] == num) return false;
         }
     }
